@@ -1,4 +1,4 @@
-# Sppr clone repository
+# Сlone of the repository "SPPR-PROJECT"
 
 This template should help you optimize your code using the Vue 3 framework and the Vite package manager.
 
