@@ -64,7 +64,6 @@ import { useActiveStore } from '@/store/active.js';
 import { useMachineStore } from '@/store/machine.js';
 import { useKFVStore } from '@/store/kfv';
 import { useRoute, useRouter } from 'vue-router';
-import { useTEPStore } from "@/store/tep.js";
 import { pages } from '@/utilities/pagesData.js'
 import { useDateStore } from '@/store/date';
 
@@ -73,7 +72,6 @@ const router = useRouter();
 const activeStore = useActiveStore();
 const machineStore = useMachineStore();
 const kfvStore = useKFVStore();
-const tepStore = useTEPStore();
 const dateStore = useDateStore();
 const startDate = ref(new Date(defaultStartYear, 0, 1));
 const endDate = ref(new Date(defaultEndYear, 11, 31));
@@ -141,19 +139,6 @@ const handleClick = (value) => {
     updateUrl()
 };
 
-const resetButton = () => {
-    selectedMachineTypeIds.value = [];
-    activeStore.updateFilterParams({ machineTypeIds: [] });
-    localStorage.setItem('selectedMachineTypeIds', JSON.stringify(selectedMachineTypeIds.value));
-    machineStore.resetMachineTypes();
-
-    startDate.value = new Date(defaultStartYear, 0, 1);
-    endDate.value = new Date(defaultEndYear, 11, 31);
-
-    updateYearRange();
-    saveStateToStorage();
-};
-
 const updateUrl = () => {
     const startYear = startDate.value ? new Date(startDate.value).getFullYear() : 2000;
     const endYear = endDate.value ? new Date(endDate.value).getFullYear() : 2024;
@@ -181,16 +166,8 @@ const updateYearRange = () => {
         isError.value = false
     }
 
-    // const currentPage = pages.find(page => page.name === route.name);
-    // if (currentPage && currentPage.updateStore) {
-    //     currentPage.updateStore(startYear, endYear, timeInterval.value);
-    // } else {
-    //     console.warn('Неизвестная страница или отсутствует функция обновления.');
-    // }
-
     activeStore.updateFilterParams({ yearStart: startYear, yearEnd: endYear });
     kfvStore.updateFilterParams({ yearStart: startYear, yearEnd: endYear });
-    tepStore.updateFilterParams({ yearStart: startYear, yearEnd: endYear }, timeInterval)
     
     saveStateToStorage();
 };

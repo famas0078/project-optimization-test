@@ -37,7 +37,6 @@
 import { useMachineStore } from '@/store/machine';
 import { useActiveStore } from '@/store/active';
 import { useKFVStore } from '@/store/kfv';
-import { useTEPStore } from "@/store/tep.js";
 
 export default {
   name: 'MachineClassComponent',
@@ -50,7 +49,6 @@ export default {
       machineStore: useMachineStore(),
       activeStore: useActiveStore(),
       kfvStore: useKFVStore(),
-      tepStore: useTEPStore(),
     }
   },
   computed: {
@@ -169,10 +167,6 @@ export default {
         machineClassIds: this.selectedMachineClassIds,
       });
       this.kfvStore.updateFilterParams({
-        machineClassIds: this.selectedMachineClassIds,
-      });
-
-      this.tepStore.updateFilterParams({
         machineClassIds: this.selectedMachineClassIds,
       });
     }

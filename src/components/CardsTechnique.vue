@@ -15,12 +15,6 @@
             </div>
             <p class="item-technic-text py-3">{{ technique.title }}</p>
           </div>
-  <!--        <div class="flex flex-col gap-y-2">-->
-  <!--          <p class="flex items-center gap-x-1 font-medium text-[#0554F2] leading-5"><img src="/img/tech/Check Circle.svg">-->
-  <!--            {{ technique.total }}</p>-->
-  <!--          <p class="flex items-center gap-x-1 font-medium text-[#979DAC] leading-5"><img-->
-  <!--              src="/img/tech/Danger Circle.svg"> {{ technique.repair }}</p>-->
-  <!--        </div>-->
         </div>
       </div>
     </div>
@@ -33,14 +27,12 @@ import { useStore } from "vuex";
 import { useActiveStore } from "@/store/active";
 import { useMachineStore } from "@/store/machine";
 import { useKFVStore } from "@/store/kfv";
-import {useTEPStore} from "@/store/tep.js";
 
 const store = useStore();
 const techniques = computed(() => store.state.techniques);
 const machineStore = useMachineStore();
 const kfvStore = useKFVStore();
 const activeStore = useActiveStore();
-const tepStore = useTEPStore();
 const selectedTechniqueId = ref(null);
 
 const loadStateFromLocalStorage = () => {
@@ -91,7 +83,6 @@ const selectTechnique = (techniqueId) => {
   saveToLocalStorage();
   activeStore.updateFilterParams({ machineClassIds: techniqueId });
   kfvStore.updateFilterParams({ machineClassIds: techniqueId });
-  tepStore.updateFilterParams({ machineClassIds: techniqueId });
 
   // activeStore.fetchData();
 
@@ -131,15 +122,6 @@ onMounted(() => {
 
   selectTechnique(selectedTechniqueId.value);
 });
-
-
-
-// watch(selectedTechniqueId, (newTechniqueId) => {
-//   if (newTechniqueId) {
-//
-//     fetchTechniques(newTechniqueId);
-//   }
-// });
 
 const fetchTechniques = async (machineClassIds) => {
 

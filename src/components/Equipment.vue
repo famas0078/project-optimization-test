@@ -102,13 +102,11 @@ import { useMachineStore } from '@/store/machine';
 import { onMounted, watch, ref, computed } from 'vue';
 import { useActiveStore } from '@/store/active';
 import { useKFVStore } from '@/store/kfv';
-import { useTEPStore } from "@/store/tep.js";
 import MachineClassComponent from '@/components/machineClassComponent.vue'
 
 const machineStore = useMachineStore();
 const activeStore = useActiveStore();
 const kfvStore = useKFVStore();
-const tepStore = useTEPStore();
 
 const selectedTechniqueId = ref(null);
 const openedMachineMarkId = ref(null);
@@ -444,9 +442,6 @@ const saveStateToStorage = () => {
         machineTypeIds: selectedMachineTypeIds.value,
     });
     kfvStore.updateFilterParams({
-        machineTypeIds: selectedMachineTypeIds.value,
-    });
-    tepStore.updateFilterParams({
         machineTypeIds: selectedMachineTypeIds.value,
     });
 };

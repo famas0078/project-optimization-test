@@ -18,62 +18,6 @@ const store = createStore({
                     img: 'img/header/kfv.svg',
                     imgActive: 'img/header/kfv_active.svg',
                     route: '/time',
-                },
-                {
-                    id: 2,
-                    title: 'ТЭП',
-                    img: 'img/header/tei.svg',
-                    imgActive: 'img/header/tei_active.svg',
-                    route: '/TechnicalEconomicIndicators'
-                },
-                {
-                    id: 3,
-                    title: 'ТОиР',
-                    img: 'img/header/toir.svg',
-                    imgActive: 'img/header/toir_active.svg',
-                    route: '/MaintenanceRepair'
-                },
-                {
-                    id: 4,
-                    title: 'КТГ',
-                    img: 'img/header/ktg.svg',
-                    imgActive: 'img/header/ktg_active.svg',
-                    route: '/TechnicalCosts'
-                },
-                {
-                    id: 5,
-                    title: 'ТСО',
-                    img: 'img/header/tco.svg',
-                    imgActive: 'img/header/tco_active.svg',
-                    route: '/TechnicalStructure'
-                },
-                {
-                    id: 6,
-                    title: 'STR',
-                    img: 'img/header/str.svg',
-                    imgActive: 'img/header/str_active.svg',
-                    route: '/STR'
-                },
-                {
-                    id: 7,
-                    title: 'NPV',
-                    img: 'img/header/npv.svg',
-                    imgActive: 'img/header/npv_active.svg',
-                    route: '/NPV'
-                },
-                {
-                    id: 8,
-                    title: 'Новая организация',
-                    img: 'img/header/organizations.svg',
-                    imgActive: 'img/header/organizations_active.svg',
-                    route: '/administration/new-organization'
-                },
-                {
-                    id: 9,
-                    title: 'Новый пользователь',
-                    img: 'img/header/admin_add_user.svg',
-                    imgActive: 'img/header/admin_add_user_active.svg',
-                    route: '/administration/new-user',
                 }
             ],
             techniques: [{

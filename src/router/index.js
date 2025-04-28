@@ -27,11 +27,6 @@ const router = createRouter({
       component: () => import('@/views/TimeView.vue')
     },
     {
-      path: '/TechnicalEconomicIndicators',
-      name: 'TechnicalEconomicIndicators',
-      component: () => import('@/views/TEIView.vue')
-    },
-    {
       path: '/MaintenanceRepair',
       name: 'MaintenanceRepair',
       component: () => import('@/views/MaintenanceRepairView.vue')
