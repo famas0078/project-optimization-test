@@ -1,6 +1,6 @@
-# Life of machines
+# Сlone of the repository "SPPR-PROJECT"
 
-This template should help get you started developing with Vue 3 in Vite.
+This template should help you optimize your code using the Vue 3 framework and the Vite package manager.
 
 ## Recommended IDE Setup
 
